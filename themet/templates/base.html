@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!doctype html>
+
+<html>
+<head>
+    <title>
+        {% block title %}
+            Freeshelf
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% block header %}{% endblock header %}
+</head>
+<body>
+    <header>
+       <h1>Freeshelf: Art History Edition</h1>
+       <div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'search' %}">Search</a></li>
+                <li><a href="{% url 'portal' %}">Portal</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+{% block content %}
+    <h1>Freeshelf: Art History Edition</h1>
+    <p>Welcome to Freeshelf: Art History Edition. All books within this digital bookshelf have been sourced from The Met Museum's expansive collection.</p>
+{% endblock content %}
+
+{% block footer %}{% endblock footer %}
+
+</body>
+</html>
