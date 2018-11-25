@@ -14,7 +14,7 @@ class Book(models.Model):
     image = models.ImageField(upload_to='books/', null=True)
 
     def save(self):
-        if not self.id:
+        if not self.id: 
             self.slug = slugify(self.title)
         super(Book, self).save()
 
