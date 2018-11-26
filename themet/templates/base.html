@@ -13,24 +13,31 @@
 </head>
 <body>
     <header>
-       <h1>Freeshelf: Art History Edition</h1>
+       <h1>Freeshelf</h1>
        <div>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'search' %}">Search</a></li>
                 <li><a href="{% url 'portal' %}">Portal</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'auth_login' %}">Login</a></li>
+                <li><a href="{% url 'registration_register' %}">Register</a></li>
+                {% endif %}
             </ul>
         </nav>
         </div>
     </header>
 
 {% block content %}
-    <h1>Freeshelf: Art History Edition</h1>
-    <p>Welcome to Freeshelf: Art History Edition. All books within this digital bookshelf have been sourced from The Met Museum's expansive collection.</p>
+    
 {% endblock content %}
 
-{% block footer %}{% endblock footer %}
+{% block footer %}
+<p>All books within this digital bookshelf have been sourced from The Met Museum's expansive collection.</p>
+{% endblock footer %}
 
 </body>
 </html>

@@ -1,3 +1,4 @@
-title,author,description,date_added,category,image,url
-Age of Spirituality,Hans-Goerg Bock,description,2018-11-20,Medival Art,age_of_spirituality.jpg,https://books.google.com/books?id=bFbhqKDZwjAC&printsec=frontcover&hl=en#v=onepage&q&f=false
-The Essential Art of African Textiles,Alisa LaGamma and Christine Giuntini,description,2018-11-20,African Art,african_textiles.jpg,https://www.metmuseum.org/art/metpublications/The_Essential_Art_of_African_Textiles_Design_Without_End?Tag=&title=&author=&pt=0&tc={F1F197B8-A906-427D-9F5E-ACF6306529D1}&dept=0&fmt=0
+title,author,description,category,url,date_added
+Age of Spirituality,Hans-Goerg Bock,description,Medival Art,https://books.google.com/books?id=bFbhqKDZwjAC&printsec=frontcover&hl=en#v=onepage&q&f=false
+The Essential Art of African Textiles,Alisa LaGamma and Christine Giuntini,description,African Art,https://www.metmuseum.org/art/metpublications/The_Essential_Art_of_African_Textiles_Design_Without_End?Tag=&title=&author=&pt=0&tc={F1F197B8-A906-427D-9F5E-ACF6306529D1}&dept=0&fmt=0
+The Big Book of Art, Christian Stewart, This is a big book about all of the art things,children's art,google.com

@@ -5,12 +5,18 @@
 {% endblock title %}
 
 {% block content %}
-    <h1>Hello World!</h1>
-    <p>{{ number }}</p>
+    <h1>Welcome to Freeshelf: Art History Edition.</h1> 
+    {% comment %} <p>{{ number }}</p> {% endcomment %}
     {% for book in books %}
-        {{ book.title }}
-        {{ book.author }}
-        {{ book.description }}
-        {{ book.image }}
+        <a href="{% url 'book_detail' slug=book.slug %}">
+        <h4>{{ book.title }}</h4></a>
+    <ul>
+        <li>{{ book.author }}</li>
+        <li>{{ book.description }}</li>
+        {% comment %} {{ book.category }} {% endcomment %}
+        <li>{{ book.slug }}</li>
+        <li>{{ book.url }}</li>
+        {% comment %} {{ book.image }} {% endcomment %}
+    </ul>
     {% endfor %}
 {% endblock content %}

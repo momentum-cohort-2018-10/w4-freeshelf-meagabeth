@@ -6,7 +6,7 @@ from themet.models import Book
 
 class BookAdmin(admin.ModelAdmin):
     model = Book
-    list_display = ('title', 'author', 'description',)
+    list_display = ('title', 'author', 'description', 'url',)
     # prepopulated_fields = {'slug': ('title',)}
 
 
