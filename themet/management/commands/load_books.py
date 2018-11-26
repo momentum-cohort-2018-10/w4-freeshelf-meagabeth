@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 from django.conf import settings
 import os.path
-import csv
+import json
 from themet.models import Book
 from django.core.files import File
 from django.template.defaultfilters import slugify
@@ -21,20 +21,28 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         print("Deleting books...")
         Book.objects.all().delete()
-        with open(get_path('books.csv'), 'r') as file:
-            reader = csv.DictReader(file)
-            for row in reader:
+        i = 0
+        with open(get_path('books.json'), 'r') as file:
+            reader = json.load(file)
+            for book in reader:
                 book = Book(
-                    title=row['title'],
-                    author=row['author'],
-                    description=row['description'],
-                    # date_added=row['date_added'],
-                    # category=row['category'],
-                    # image=row['image'],
-                    url=row['url'],
-                    slug=slugify(row['title'])
+                    title=reader[i]['title'],
+                    author=reader[i]['author'],
+                    description=reader[i]['description'],
+                    # date_added=reader['date_added'],
+                    # category=reader['category'],
+                    # image=reader['image'],
+                    url=reader[i]['url'],
+                    slug=slugify(reader[i]['title']),
+                    african_art=reader[i]['african_art'],
+                    american_art=reader[i]['american_art'],
+                    medival_art=reader[i]['medival_art'],
+                    european_art=reader[i]['european_art'],
+                    twentieth_cent_art=reader[i]['twentieth_cent_art']
+
                 )
                 # book.image.save(row['image'],
                 #             File(open(get_path(row['image']), 'rb')))
                 book.save()
+                i += 1
         print("Books loaded!")

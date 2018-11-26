@@ -8,15 +8,14 @@
     <h1>Welcome to Freeshelf: Art History Edition.</h1> 
     {% comment %} <p>{{ number }}</p> {% endcomment %}
     {% for book in books %}
-        <a href="{% url 'book_detail' slug=book.slug %}">
+        <p><a href="{% url 'book_detail' slug=book.slug %}">
         <h4>{{ book.title }}</h4></a>
-    <ul>
-        <li>{{ book.author }}</li>
-        <li>{{ book.description }}</li>
+        Written by {{ book.author }}</p>
+        {% comment %} <li>{{ book.description }}</li> {% endcomment %}
         {% comment %} {{ book.category }} {% endcomment %}
-        <li>{{ book.slug }}</li>
-        <li>{{ book.url }}</li>
+        {% comment %} <li>{{ book.slug }}</li> {% endcomment %}
+        {% comment %} <li>{{ book.url }}</li> {% endcomment %}
         {% comment %} {{ book.image }} {% endcomment %}
-    </ul>
+    
     {% endfor %}
 {% endblock content %}
