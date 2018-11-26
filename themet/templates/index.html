@@ -5,7 +5,7 @@
 {% endblock title %}
 
 {% block content %}
-    <h1>Welcome to Freeshelf: Art History Edition.</h1> 
+    <h1>Welcome to Freeshelf: Art History Edition</h1> 
     {% comment %} <p>{{ number }}</p> {% endcomment %}
     {% for book in books %}
         <p><a href="{% url 'book_detail' slug=book.slug %}">

@@ -23,7 +23,7 @@ def browse_by_title(request, initial=None):
         books = Book.objects.filter(title__istartswith=initial).order_by('title')
     else:
         books = Book.objects.all().order_by('title')
-    return render(request, 'search/search.html', {
+    return render(request, 'search.html', {
         'books': books,
         'initial': initial,
     })
